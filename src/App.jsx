@@ -1,3 +1,5 @@
+import componentsImg from './assets/components.png';
+
 const reactDescriptions = ['Fundamental','Core','Crucial'];
 
 function getRandomInt(max){
@@ -25,8 +27,21 @@ function App() {
     <div>
       <Header />
       <main>
-        <section id="core-conception">
-
+        <section id="core-concepts">
+        <h2>Core Concepts</h2>
+        <ul>
+          <CoreConcepts 
+            title="Components" 
+            description="This is the core building block of React. Components are reusable pieces of UI."
+            image={componentsImg}            
+          />
+          <CoreConcepts 
+            title="Props" 
+            description="Props are how components talk to each other. They are the mechanism for passing data from parent to child."
+          />    
+          <CoreConcepts
+          />
+        </ul>
         </section>
         <h2>Time to get started!</h2>
       </main>
@@ -35,7 +50,13 @@ function App() {
 }
 
 function CoreConcepts(props){
-
+return (
+  <li>
+    <img src={props.image} />
+    <h3>{props.title}</h3>
+    <p>{props.description}</p>
+  </li>
+);
 }
 
 export default App;
