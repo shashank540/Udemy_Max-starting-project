@@ -1,4 +1,5 @@
-import componentsImg from './assets/components.png';
+import reactImg from './assets/react-core-concepts.png';
+import {CORE_CONCEPTS} from './data.js';
 
 const reactDescriptions = ['Fundamental','Core','Crucial'];
 
@@ -31,15 +32,24 @@ function App() {
         <h2>Core Concepts</h2>
         <ul>
           <CoreConcepts 
-            title="Components" 
-            description="This is the core building block of React. Components are reusable pieces of UI."
-            image={componentsImg}            
+            title={CORE_CONCEPTS[0].title}
+            description={CORE_CONCEPTS[0].description}
+            image={CORE_CONCEPTS[0].image}
           />
           <CoreConcepts 
-            title="Props" 
-            description="Props are how components talk to each other. They are the mechanism for passing data from parent to child."
-          />    
+            title={CORE_CONCEPTS[1].title}
+            description={CORE_CONCEPTS[1].description}
+            image={CORE_CONCEPTS[1].image}
+          />
           <CoreConcepts
+            title={CORE_CONCEPTS[2].title}
+            description={CORE_CONCEPTS[2].description}
+            image={CORE_CONCEPTS[2].image}
+          />
+          <CoreConcepts
+            title={CORE_CONCEPTS[3].title}
+            description={CORE_CONCEPTS[3].description}
+            image={CORE_CONCEPTS[3].image}  
           />
         </ul>
         </section>
