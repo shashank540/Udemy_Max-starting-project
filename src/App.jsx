@@ -42,7 +42,7 @@ function App() {
             <TabButton onClick={() => handleClick('props')}>Props</TabButton>
             <TabButton onClick={() => handleClick('state')}>State</TabButton>
           </main>
-          {tabContent}
+          {tabContent} //till we have problem with state management, this will not update the UI when a button is clicked so thaty we have stat management in the next lecture.
         </section>
       </main>
     </div>
