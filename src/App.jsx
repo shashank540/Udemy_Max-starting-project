@@ -3,8 +3,16 @@ import Header from './components/Header/Header.jsx';
 import CoreConcepts from './components/CoreConcepts/CoreConcepts.jsx';
 import './components/Header/Header.css';
 import './components/CoreConcepts/Coreconcepts.css';
+import TabButton from './components/TabButton.jsx';
 
 function App() {
+
+  let tabContent = 'Please click the button';
+  function handleClick(selectedButton) {
+        tabContent = selectedButton;
+        console.log('tabContent:', tabContent);
+    }
+
   return (
     <div>
       <Header />
@@ -26,7 +34,16 @@ function App() {
           />
         </ul>
         </section>
-        <h2>Time to get started!</h2>
+        <section id="examples">
+          <h2>Examples</h2>
+          <main>            
+            <TabButton onClick={() => handleClick('components')}>Components</TabButton>
+            <TabButton onClick={() => handleClick('jsx')}>JSX</TabButton>
+            <TabButton onClick={() => handleClick('props')}>Props</TabButton>
+            <TabButton onClick={() => handleClick('state')}>State</TabButton>
+          </main>
+          {tabContent}
+        </section>
       </main>
     </div>
   );
