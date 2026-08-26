@@ -1,4 +1,5 @@
 function CoreConcepts(props){
+  console.log('CoreConcepts component is rendering');
 return (
   <li>
     <img src={props.image} />

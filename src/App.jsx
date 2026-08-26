@@ -1,18 +1,19 @@
+import { useState } from 'react';
+
 import {CORE_CONCEPTS} from './data.js';
 import Header from './components/Header/Header.jsx';
 import CoreConcepts from './components/CoreConcepts/CoreConcepts.jsx';
 import './components/Header/Header.css';
 import './components/CoreConcepts/Coreconcepts.css';
 import TabButton from './components/TabButton.jsx';
+import {EXAMPLES} from './data.js';
 
 function App() {
-
-  let tabContent = 'Please click the button';
+  const [tabContent, setTabContent] = useState('components');
   function handleClick(selectedButton) {
-        tabContent = selectedButton;
-        console.log('tabContent:', tabContent);
-    }
-
+    setTabContent(selectedButton);
+  }
+console.log('App component is rendering');
   return (
     <div>
       <Header />
@@ -42,7 +43,15 @@ function App() {
             <TabButton onClick={() => handleClick('props')}>Props</TabButton>
             <TabButton onClick={() => handleClick('state')}>State</TabButton>
           </main>
-          {tabContent} //till we have problem with state management, this will not update the UI when a button is clicked so thaty we have stat management in the next lecture.
+          <div id="tab-content">
+            <h3>{EXAMPLES[tabContent].title}</h3>
+            <p>{EXAMPLES[tabContent].description}</p>
+            <pre>
+              <code>
+                {EXAMPLES[tabContent].code}
+              </code>
+            </pre>
+          </div>
         </section>
       </main>
     </div>
