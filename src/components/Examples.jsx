@@ -13,6 +13,7 @@ export default function Examples() {
     }
 
     let tabContent = <p>Please select a topic.</p>;
+    let ButtonsContainer = "";
 
     if (selectedTopic) {
         tabContent = (
@@ -28,7 +29,9 @@ export default function Examples() {
 
     return (
         <Section title="Examples" id="examples" className="examples">
-            <Tabs buttons={
+            <Tabs
+            ButtonsContainer = "menu" 
+            buttons={
                 <>
                 <TabButton
                     isSelected={selectedTopic === "components"}
